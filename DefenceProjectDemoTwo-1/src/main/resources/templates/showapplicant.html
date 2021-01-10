@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<div align="center">
+    <h1>ApplicantList List</h1>
+    <a href="/new"></a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Applicant ID</th>
+                <th>Applicant Name</th>
+                <th>Applicant Email</th>
+                <th>Applicant Phone Number</th>
+                <th>Applicant Address</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="applicantList : ${applicantList}">
+                <td th:text="${applicantList.id}">Applicant ID</td>
+                <td th:text="${applicantList.Name}">Applicant Name</td>
+                <td th:text="${applicantList.email}">Applicant Email</td>
+                <td th:text="${applicantList.phoneNumber}">Applicant Phone Number</td>
+                <td th:text="${applicantList.address}">Applicant Address</td>
+                     <td>
+                       <a th:href="@{/edit/{id}(id=${applicantList.id})}">Edit</a>
+       							 &nbsp;&nbsp;&nbsp;
+       				   <a th:href="@{/delete/{id}(id=${applicantList.id})}">Delete</a>
+                </td>
+          		
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	 <div align="center">
+        <h1>Edit Applicant</h1>
+        <br />
+        <form action="/update" th:object="${applicant}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td></td>
+                    <td>
+                        <input type="hidden" name="id" th:field=*{id}/>
+                    </td>
+                </tr>        
+                <tr>             
+                    <td>Applicant Name:</td>
+                    <td>
+                        <input type="text" name="Name" th:field=*{Name}/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Applicant Email:</td>
+                    <td><input type="text" name="email" th:field=*{email} /></td>
+                </tr>
+                <tr>
+                    <td>Applicant Phone Number:</td>
+                    <td><input type="text" name="phoneNumber" th:field=*{phoneNumber}/></td>
+                </tr>
+                <tr>
+                    <td>Applicant Address:</td>
+                    <td><input type="text" name="address" th:field=*{address} /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

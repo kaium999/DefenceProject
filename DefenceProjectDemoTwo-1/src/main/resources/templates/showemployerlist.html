@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+			<div align="center">
+    <h1>EmployerList List</h1>
+    <a href="/new"></a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Employer Id</th>
+                <th>Employer Email</th>
+                <th>Employer Company Name</th>
+                <th>Employer Phone Number</th>
+                <th>Employer Address</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employerList : ${employerList}">
+                <td th:text="${employerList.eid}">Employer ID</td>
+                <td th:text="${employerList.email}">Employer Email</td>
+                <td th:text="${employerList.companyName}">Employer CompanyName</td>
+                <td th:text="${employerList.phonenumber}">Employer Phone Number</td>
+                <td th:text="${employerList.address}">Employer Address</td>
+                      <td>
+                     
+       				   <a th:href="@{/delete/{eid}(eid=${employerList.eid})}">Delete</a>
+                </td>
+          		
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
